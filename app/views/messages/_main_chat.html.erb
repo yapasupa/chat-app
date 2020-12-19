@@ -1,6 +1,5 @@
-＜チャット画面＞
 <div class="chat-header">
-<div class="left-header">
+  <div class="left-header">
     <div class="header-title">
       hogefuga
     </div>
@@ -13,9 +12,10 @@
 </div>
 
 <div class="messages">
+<%= render partial: 'message', collection: @messages %>
 </div>
 
-<%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
+<%= form_with  class: 'form', local: true do |f| %>
   <div class="form-input">
     <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
     <label class="form-image">
